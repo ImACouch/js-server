@@ -5,6 +5,7 @@ var CLIENTS=[];
 
 //make/start server
 var wss = new WebSocket.Server({ port: 8082 });
+console.log("runing")
 wss.broadcast = function(data) {
     //sends data to all connecshons
     wss.clients.forEach(function(client) {
