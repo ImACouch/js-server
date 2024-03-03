@@ -2,9 +2,10 @@ const WebSocket = require("ws");
 var number=1;
 var CLIENTS=[];
 
+const PORT = process.env.PORT | 5000;
 
 //make/start server
-var wss = new WebSocket.Server({ port: 8082 });
+var wss = new WebSocket.Server({ port: PORT });
 console.log("runing")
 wss.broadcast = function(data) {
     //sends data to all connecshons
