@@ -1,0 +1,43 @@
+
+
+<H1 class="home">Test</H1>
+
+<title>my websight</title>
+
+<style>
+    .home {
+        color: orange;
+    }
+</style>
+
+<script>
+    fetch('/api/number')
+        .then(response => response.json())
+        .then(number => console.log(number));
+
+    var obj={
+        name:1
+    }
+    function update() 
+    {
+        fetch('/contact', {
+            method:"POST",
+            headers:{
+                "Content-type":"application/json"
+            },
+            body:JSON.stringify(obj)
+        })
+        
+        
+
+        
+    }
+
+    function add() {
+        obj.name +=1;
+        update();
+    };
+
+    setInterval(add, 500)
+    
+</script>
